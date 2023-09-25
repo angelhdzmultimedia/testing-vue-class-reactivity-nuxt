@@ -9,11 +9,16 @@ function handleLoginButtonClick(event: MouseEvent): void {
 </script>
 
 <template>
-  <div>
-    Is Authenticated: {{ authentication.isAuthenticated }} User:
-    {{ authentication.user }}
+  <div style="display: flex; flex-direction: column; row-gap: 8px">
+   <span> Is Authenticated: {{ authentication.isAuthenticated }} </span>
+    <span>User: {{ authentication.user ?? 'null' }}</span>
     <input v-model="email" placeholder="Email" />
     <input v-model="password" placeholder="Password" />
-    <button @click="handleLoginButtonClick">Login</button>
+    <button
+      style="background: #00ccff; color: white; outline: none; border: none"
+      @click="handleLoginButtonClick"
+    >
+      Login
+    </button>
   </div>
 </template>
